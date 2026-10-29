@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+.idea/
+.vscode/
+# Données volumineuses (à télécharger séparément, voir data/README.md)
+data/*.txt
+data/*.csv
+# Résultats générés
+models/*.joblib
+results/*
+!results/.gitkeep
