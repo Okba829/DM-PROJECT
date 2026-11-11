@@ -1,6 +1,6 @@
 # Détection d'attaques réseau par fouille de données
 
-Projet de Data Mining — 2026/2027
+Projet de Data Mining — Yacine Bouguerni — École Militaire Polytechnique (Ingénierie Informatique, Sécurité des systèmes) — 2026/2027
 
 Chaîne complète de détection d'intrusion sur le jeu **NSL-KDD** : exploration, prétraitement, sélection d'attributs, comparaison de classifieurs (supervisé), détection d'anomalies (non supervisé), test sur attaques inconnues.
 
@@ -70,6 +70,16 @@ Les résultats synthétiques ne doivent **jamais** figurer dans le rapport.
 - `report_<cible>_<modèle>.txt` : rapports de classification détaillés
 - `importance_<cible>_RandomForest.png` : attributs les plus importants
 - `metrics_isolation_forest.csv`, `unseen_attacks.csv`, `eda_*.png`
+
+
+## Résultats principaux (NSL-KDD, jeu de test KDDTest+)
+
+- **5 classes** : meilleur F1 macro = régression logistique (0,606, exactitude 0,791).
+- **Binaire** : kNN, arbre et Random Forest, F1 macro de 0,77 à 0,78, fausses alarmes de 2,7 à 3,7 %.
+- **Isolation Forest** (sans étiquettes d'attaque) : F1 macro 0,781, AUC 0,939.
+- **Attaques inconnues** : taux de détection de 57 % (DoS), 37 % (Probe), 6 % (U2R), 0,1 % (R2L).
+
+Rapport complet avec figures et discussion : [`docs/rapport.md`](docs/rapport.md). Comparaison des configurations (base, sélection, SMOTE) : `results/comparaison_configurations_cls.csv`.
 
 ## Guide Git (commits à faire au fil du travail)
 
