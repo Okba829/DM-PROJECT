@@ -1,7 +1,6 @@
 # Détection d'attaques réseau par fouille de données
 
-**Projet de Data Mining** — Yacine Bouguerni
-École Militaire Polytechnique — Ingénierie Informatique, Sécurité des systèmes — 2026/2027
+**Projet de Data Mining**  2026/2027
 
 ---
 
