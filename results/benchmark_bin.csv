@@ -1,0 +1,11 @@
+model,famille,accuracy,precision_macro,recall_macro,f1_macro,detection_rate,false_alarm_rate,fit_time_s,batch_ms_per_sample,latency_ms_single,model_size_kb,peak_mem_mb,compatible_passerelle
+NaiveBayes,Probabiliste,0.5664,0.7382,0.6183,0.5269,0.2437,0.0072,0.5,0.0031,3.806,9.5,2.92,True
+DecisionTree,Arbre,0.7732,0.8101,0.7963,0.7725,0.6298,0.0373,1.52,0.0016,3.862,38.9,1.93,True
+kNN,À base d'instances,0.7803,0.8182,0.8036,0.7795,0.635,0.0278,0.24,0.7995,26.883,121058.0,2.04,False
+RandomForest,Ensemble (bagging),0.7738,0.8148,0.798,0.7728,0.6231,0.0271,20.1,0.0135,12.827,19549.9,1.94,False
+LogisticRegression,Linéaire,0.7542,0.784,0.775,0.7538,0.6249,0.0749,5.41,0.002,5.432,6.8,1.93,True
+LinearSVM,Linéaire,0.7531,0.783,0.7739,0.7526,0.6235,0.0757,5.58,0.002,3.336,6.7,1.93,True
+AdaBoost,Ensemble (boosting),0.7983,0.8284,0.8193,0.798,0.6675,0.0289,53.16,0.0133,11.217,143.6,1.94,False
+XGBoost,Ensemble (boosting),0.8032,0.8318,0.8238,0.803,0.6754,0.0279,4.75,0.0035,4.033,496.0,1.93,True
+LightGBM,Ensemble (boosting),0.7808,0.8181,0.804,0.7801,0.6366,0.0286,3.1,0.0101,4.781,1419.7,1.93,True
+Voting,Ensemble (vote),0.785,0.8212,0.8079,0.7844,0.643,0.0273,16.95,0.0139,8.869,11234.3,1.93,False
