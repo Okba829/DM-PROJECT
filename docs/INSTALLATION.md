@@ -84,3 +84,50 @@ La commande git a été lancée en dehors du dépôt. Se placer d'abord dans le 
 cd C:\chemin\vers\DM-PROJECT
 git status
 ```
+
+
+## Lancement de l'application : problèmes fréquents
+
+### `'streamlit' n'est pas reconnu`
+
+Le script `streamlit` n'est pas toujours dans le `PATH` de Windows. Lancer plutôt l'application via Python
+(le fichier de l'application est `app/streamlit_app.py`, et non `app.py`) :
+
+```
+python -m streamlit run app/streamlit_app.py
+```
+
+### Streamlit demande une adresse e-mail au premier lancement
+
+Au premier lancement, Streamlit affiche `Email:` et attend une réponse : la fenêtre semble bloquée.
+Appuyer sur **Entrée** sans rien saisir, ou créer une fois pour toutes le fichier de configuration
+(après `Ctrl+C` pour arrêter le programme en cours) :
+
+```
+mkdir %USERPROFILE%\.streamlit
+echo [general] > %USERPROFILE%\.streamlit\credentials.toml
+echo email = "" >> %USERPROFILE%\.streamlit\credentials.toml
+```
+
+Relancer ensuite l'application : la question n'est plus posée. L'application est alors disponible
+sur `http://localhost:8501`.
+
+### `fatal: not a git repository`
+
+Les commandes `git` doivent être exécutées **dans le dossier du projet** (celui qui contient `src/`,
+`tests/` et le dossier caché `.git`), pas dans le dossier personnel :
+
+```
+cd <chemin>\DM-PROJECT
+git status
+```
+
+### La suite de tests est très lente
+
+Sur un ordinateur peu puissant, `python -m pytest tests/` peut durer plusieurs minutes
+(environ 7 minutes mesurées), car certains tests entraînent de vrais modèles. Pour travailler
+sur un seul fichier :
+
+```
+python -m pytest tests/test_evaluate.py -q
+```
